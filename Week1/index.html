@@ -1,30 +1,54 @@
-
-<div>
-
-
-<h2>WDD 330 - Week 01</h2>
-
-    <p>
-        LocalStorage uses key value pairs for storage
-
-        <h3>My Test Code Example:</h3>
-        const bleh = document.getElementById("bleh");<br />
-        <br />
-        let name = 'nate';<br />
-        let description = 'cool coder kid';<br />
-        <br />
-        localStorage.setItem(name, description);<br />
-        bleh.textContent = localStorage.getItem(name);<br />
-<br />
-        //Test: <br />
-        description = "The Cool Coder Kid" <br />
-<br />
-        //Result: Doesn’t change the output because localStorage was already set<br />
-<br />
-        LocalStorage Methods:<br />
-        setItem(key, value) - Puts an item in local storage given a key<br />
-        getItem(key) - Returns the value of an item in local storage given a key<br />
-        removeItem(key) - Removes an item from local storage given a key<br />
-        clear() - Clears whole local storage<br />
-    </p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class='main'>
+        <h2>WDD 330 - Week 01</h2>
+        <div class="curve"></div>
+</header>
+<main>
+        
+        <section class="primary">
+           LocalStorage uses key value pairs for storage
+               <h3>My Test Code Example:</h3>
+           const bleh = document.getElementById("bleh");<br />
+           <br />
+           let name = 'nate';<br />
+           let description = 'cool coder kid';<br />
+           <br />
+           localStorage.setItem(name, description);<br />
+           bleh.textContent = localStorage.getItem(name);<br />
+           <br />
+           //Test: <br />
+           description = "The Cool Coder Kid" <br />
+           <br />
+           //Result: Doesn’t change the output because localStorage was already set<br />
+           <br />
+           LocalStorage Methods:<br />
+           setItem(key, value) - Puts an item in local storage given a key<br />
+           getItem(key) - Returns the value of an item in local storage given a key<br />
+           removeItem(key) - Removes an item from local storage given a key<br />
+           clear() - Clears whole local storage<br />
+           
+        </section>
+       <section class="secondary">
+        <h3>Master Mobile UX</h3>
+        <h4>Main Takeaways</h4>
+        <ul>
+                <li>Mobile design first.  Doing it last is like trying to stuff a marshmallow in a piggy bank; Messy and difficult</li>
+                <li>For reachability, main functionality should be lower on a mobile UI</li>
+                <li>Try to minimize the need for user interaction</li>
+                <li>upscale elements that might be hard to work with using thumbs</li>
+                <li>DO NOT USED POPUPS OR FULL SIZED ADDS</li>
+        </ul>
+       </section>
+</main>
+<br /><br />
+        
+</body>
+</html>

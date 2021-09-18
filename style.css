@@ -19,17 +19,67 @@ a:hover {
 header {
     padding: 1em;
     background: white;
+    color: black;
 }
 
-main {
-
-    margin: 2em;
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    padding: 100px 20vw;
 }
 
-#assignment-menu {
+
+.primary {
+    background: white;
+    color: black;
+}
+
+.secondary {
+    background: black;
+    color: white;
+}
+.main {
+    background-color: #85dead;
+    color: white;
+}
+
+.container {
     background: white;
     color: black;
     padding: 1em;
-    width: 25%;
     border-radius: 1em;
+    margin: 1em;
+}
+
+.curve {
+    position: absolute;
+    height: 225px;
+    width: 100%;
+    bottom: 0;
+
+}
+
+.curve::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background: white;
+}
+
+.curve::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background: black;
+    transform: translate(-4%, 40%);
+    z-index: -1;
 }
