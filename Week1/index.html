@@ -1,0 +1,30 @@
+
+<div>
+
+
+<h2>WDD 330 - Week 01</h2>
+
+    <p>
+        LocalStorage uses key value pairs for storage
+
+        <h3>My Test Code Example:</h3>
+        const bleh = document.getElementById("bleh");<br />
+        <br />
+        let name = 'nate';<br />
+        let description = 'cool coder kid';<br />
+        <br />
+        localStorage.setItem(name, description);<br />
+        bleh.textContent = localStorage.getItem(name);<br />
+<br />
+        //Test: <br />
+        description = "The Cool Coder Kid" <br />
+<br />
+        //Result: Doesn’t change the output because localStorage was already set<br />
+<br />
+        LocalStorage Methods:<br />
+        setItem(key, value) - Puts an item in local storage given a key<br />
+        getItem(key) - Returns the value of an item in local storage given a key<br />
+        removeItem(key) - Removes an item from local storage given a key<br />
+        clear() - Clears whole local storage<br />
+    </p>
+</div>
