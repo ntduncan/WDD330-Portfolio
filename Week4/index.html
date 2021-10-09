@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class='main'>
+        <h2>WDD 330 - Week 04</h2>
+        <div class="curve"></div>
+</header>
+<main>
+        <section class="primary">
+            <h1>CH 8: Forms</h1>
+            <p>
+                The primary use of forms is to gather data from the user. Forms can be used for online orders, webpage login, etc... On submission, form data can be processed
+                on either the front-end using javaScript, which is become very common, or on the backend.
+            </p>
+            <p>
+                The form element should always have a 'name', which is added in the opening form tag, to make dom accessiblity easier. A form can be accessed throught the dom by using
+                the form name as a parameter for array access notation: 
+            </p>
+            <div class="">
+                <img src="images/image1.png" alt="img1"><br /><br />
+            </div>
+            <p>
+                The form dom has an attribute called "elements" that can be used to access the elements in the form. For the following form, elements would return 
+                an input and button because they are fillable fields. Elements does not include non-fillable fields such as labels or breaks.
+                <h3>Form One</h3>
+                <form name="form-one" class="" style="border: 2px solid #85dead; padding: 2em;">
+                    <label for="input">Input Field</label>
+                    <input type="text" name="input"><br />
+                    <button class="btn btn-primary">Button</button>
+                </form>
+                <script>
+                    const form = document.forms['form-one']
+                </script>
+            </p>
+            <div class="text-center">
+                <img src="images/image3.png" alt="img1"><br /><br />
+                <img src="images/image2.png" alt="img1"><br /><br />
+            </div>
+            <p>
+                Forms collect data from the user primarily through the 'input' object. input has many differnt types for the user to specify the kind of data they wish to collent. These types inlcude:
+                <table>
+                    <tr>
+                        <td style="border: 1px solid black">checkbox<input type="checkbox"></td>
+                        <td style="border: 1px solid black">color<input type="color"></td>
+                        <td style="border: 1px solid black">date<input type="date"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black">datetime-local<input type="datetime-local"></td>
+                        <td style="border: 1px solid black">email<input type="email"></td>
+                        <td style="border: 1px solid black">file<input type="file"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black">hidden<input type="hidden"></td>
+                        <td style="border: 1px solid black">image<input type="image"></td>
+                        <td style="border: 1px solid black">month<input type="month"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black">number<input type="number"></td>
+                        <td style="border: 1px solid black">password<input type="password"></td>
+                        <td style="border: 1px solid black">radio<input type="radio"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black;">range<input type="range"></td>
+                        <td style="border: 1px solid black">reset<input type="reset"></td>
+                        <td style="border: 1px solid black">search<input type="search"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black">submit<input type="submit"></td>
+                        <td style="border: 1px solid black">tel<input type="tel"></td>
+                        <td style="border: 1px solid black">text<input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black">time<input type="time"></td>
+                        <td style="border: 1px solid black">url<input type="url"></td>
+                        <td style="border: 1px solid black">week<input type="week"></td>
+                    </tr>
+                </table>
+            </p>
+            <p>
+                You can prevent the submission of a form that is missing data by using the 'required' attribute on input tags:
+                <form name="form-two" class="text-center" style="border: 2px solid #85dead; padding: 2em;">
+                    <label for="input">Input Field</label>
+                    <input type="text" name="input" required><br />
+                    <button class="btn btn-primary">Button</button>
+                </form>
+            </p>
+        </section>
+       <section class="secondary">
+            <h1>CH 12: Object-Oriented Programming in JavaScript (OOP)</h1>
+            <p>
+                Object-Oriented Programming a programming style based on the idea encapsulating code into "objects" which are primarily methods and variables that 
+                would characterize an object in the real world. For instance, if I wanted to code a user profile, the object could have variables to 
+                represent the name, age, and contact info of the user. the contact info variable could be another object that encapsulates
+                the address, phone number, and email address of the user.
+                <script>
+                    const user = {
+                        name: "Nate",
+                        age: 23,
+                        contactInfo: {
+                            address: "123 Gumdrop Ln",
+                            phone: 8881234567,
+                            email: "test@test.com"
+                        }
+                    }
+                </script>
+
+                <div class="text-center">
+                    <img src="images/image4.png" alt="img1"><br /><br />
+                </div>
+
+                It is good practice, if you intent to use an object model for many objects to create a constructor function. This constructor can be passed parameters
+                that are unique to the object. The example given in the reading is with dice. Depending on the die, you might want it to have as different number of sides
+                but rolling a die is the same action regardless of the die. Here is what that might look like:
+
+                <script>
+                    const Dice = function(sides=6){
+                        this.sides = sides;
+                        this.roll = function() {
+                            return Math.floor(this.sides * Math.random() + 1)
+                        }
+                    }
+
+                    const sixSidedDie = new Dice(); // Default 6 sides
+                    const twelveSidedDie = new Dice(sides=12); // Custom 12 sides
+                </script>
+
+                <div class="text-center">
+                    <img src="images/image6.png" alt="img1"><br /><br />
+                    <img src="images/image5.png" alt="img1"><br /><br />
+                </div>
+                To confirm what type of object is being used you can use the 'instaceof' operator.
+            </p>
+            <p>
+                Another way to create objects is throught the use of classes. A class is just a template that is used to construct an object. Here is an example:
+                <script>
+                    class Dog {
+                        constructor(breed, name) {
+                            this.name = name;
+                            this.breed = breed;
+                        }
+                        speak() {
+                            return "Woof Woof"
+                        }
+                        sayName() {
+                            return `My name is ${this.name} and I love you!`
+                        }
+                    }
+
+                    const doug = new Dog('Golden Retriver', 'Doug')
+                    console.log(doug.sayName()); // Output: My name is Doug and I love you!
+
+                </script>
+
+                <div class="text-center">
+                    <img src="images/image7.png" alt="img1"><br /><br />
+                </div>
+            </p>
+            <p>
+                A static method is a method that can be called by a class directly, not just by an instance of a class. An example would be: <br />
+                const rightNow = Date.now()<br />
+            </p>
+       </section>
+</main>
+<br /><br />
+</body>
+</html>

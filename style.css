@@ -31,6 +31,35 @@ section {
     padding: 100px 20vw;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    width: 4vw;
+    margin: 4px;
+    font-family: 'Oswald', sans-serif;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    border: 3px solid black;
+    background: white;
+    color: black;
+}
+.btn-primary:hover {
+    background: black;
+    color: white;
+}
+
+
+.btn-secondary {
+    border: 3px solid white;
+}
+.btn-secondary:hover{
+    background: white;
+    color: black;
+}
 
 .primary {
     background: white;

@@ -3,6 +3,10 @@ const assignments = [
     {
         label: 'Week1 Notes',
         url: 'Week1/index.html'
+    },
+    {
+        label: 'Week4 Notes',
+        url: 'Week4/index.html'
     }
 ]
 
