@@ -7,7 +7,11 @@ const assignments = [
     {
         label: 'Week4 Notes',
         url: 'Week4/index.html'
-    }
+    },
+    {
+        label: 'Week5 Notes',
+        url: 'Week5/index.html'
+    },
 ]
 
 assignments.forEach(assignment => {

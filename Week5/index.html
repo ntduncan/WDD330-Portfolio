@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Week 05</title>
+        <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class='main'>
+        <h2>WDD 330 - Week 05</h2>
+</header>
+<main class="text-left">
+    <section class="primary">
+        <h1>Testing and Debugging</h1>
+        <p>
+            When developing, it is best to make sure that if your program fails that it will fail "LOUDLY."
+            This will make debugging and testing much easier when you run in to errors and bugs. In production
+            you should make sure that if there is a failure that the program fails silently (unless a failure is
+            going to directly impact the user experience).
+            Testing and debugging are used to avoid or resolve errors, exceptions, and warnings. 
+            <br><br>
+
+
+        </p>
+        <div class="container secondary">
+            <h3>Definitions</h3>
+            <hr />
+            <ul class="definitions">
+                <li>Errors - Software break due to its internal or external environment.
+                    <ul>
+                        <li>System Error - An issue has occured with external devices that the program is interacting with.</li>
+                        <li>Program Error - There is a problem with the code that is causing the program to break</li>
+                        <li>User Error - The users interaction with the program has cause the program to break (invalid inputs)</li>
+                    </ul>
+                </li>
+                <br>
+                <li>Exceptions - An error that returns a object or message that can be used to debug a program
+                    <ul>
+                        <li>Stack Traces - A papertrail produced by an exception to show the origin of an error</li>
+                    </ul>
+                </li>
+                <br>
+                <li>Warnings - A warning is an "error" that is not major enough to break the program</li>
+            </ul>
+            <hr>
+        </div>
+        <p>
+            <i>
+                **When you are coding in JavaScript it is wise to include 'use strict;'' at the top of your files. It
+                will help to make sure that you are using good practices in your code and help prevent bugs and errors.
+             </i>
+        </p>
+    </section>
+    <section class="secondary">
+        <h1>Debugging in The Console</h1>
+        <p>Errors and warnings will be located in the console (open the console for examples)</p>
+        <script>
+            console.warn("This is a warning");
+            console.error("This is an error");
+        </script>
+        <p>You can set breakpoints in your code by opening you dev tools in the browser and going to sources
+            <img src="image1.png" alt="picture of dev tools">
+            <ul>
+                <h3>Other Debugging Tools:</h3>
+                <li>alert()</li>
+                <li>console.log()</li>
+                <li>console.table() // Like log but better for arrays and objects</li>
+                <li>console.trace() // Prints out a trace that shows functions called leading up to an error</li>
+                <li>triple equal operator checks for matching value and type ('age === 23')</li>
+                <li>catch/throw statements</li>
+            </ul>
+        </p>
+    </section>
+    <section class="primary">
+        <h1>Test-driven Development</h1>
+        <p>
+            Test driven development is the process of writing test prior to the code. The tests validate the code by 
+            looking for expected outputs based on inputs. Here are the different steps in test driven development:
+            <ol>
+                <li>Write Tests</li>
+                <li>Write code to pass the tests</li>
+                <li>Refactor the code</li>
+                <li>Test refactored code</li>
+                <li>Write more testes for new features</li>
+            </ol>
+            It is really easy to ignore testing when developing code. Writing and using tests makes adding new features
+            easier because it will save you more time debugging. It also helps you to think through your code more because
+            you need to decide what conditions code must meet to pass a test.
+        </p>
+    </section>
+</main>
+<br /><br />
+<script src="test.js"></script>
+</body>
+</html>
