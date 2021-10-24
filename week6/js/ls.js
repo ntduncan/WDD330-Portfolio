@@ -10,6 +10,5 @@ export const getTodoList = () => {
 }
 
 export const setTodoList = (newList) => {
-    console.log("Landed")
     localStorage.setItem("todoList", JSON.stringify(newList));
 }

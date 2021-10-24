@@ -75,11 +75,11 @@ const createTodoElement = (todo) => {
     isCompleteInput.checked = todo.isCompleted;
     isCompleteInput.value = todo.id;
 
-    if(todo.isCompleted == true){
+    if(todo.isCompleted == true){ //If completed apply complete styles
         listItem.classList.add("complete")
     }
 
-    isCompleteInput.addEventListener("click", () => {
+    isCompleteInput.addEventListener("click", () => { //Update todo isCompleted value on click
         let todoList = Ls.getTodoList();
 
         todoList.forEach(item => {
@@ -107,7 +107,7 @@ const createTodoElement = (todo) => {
 }
 
 
-// new task btn click
+// Add eventlistener for adding a new task
 newTodoBtn.addEventListener("click", () => {
     if(newTodo.value !== "") {
         const todo = new Todo(Date.now(), newTodo.value, false);
@@ -118,29 +118,35 @@ newTodoBtn.addEventListener("click", () => {
 })
 
 document.querySelector(".all-btn").addEventListener("click", () => {
-    console.log("all")
+    //Update Sort Number
     sort = 0;
+    //Update button style
     document.querySelector(".all-btn").style = "font-size: 1.2em";
     document.querySelector(".active-btn").style = "font-size: 1em";
     document.querySelector(".completed-btn").style = "font-size: 1em";
+    //Refresh to show sort
     refreshTodoList();
 })
 
 document.querySelector(".active-btn").addEventListener("click", () => {
-    console.log("active")
+    //Update Sort Number
     sort = 1;
+    //Update button style
     document.querySelector(".all-btn").style = "font-size: 1em";
     document.querySelector(".active-btn").style = "font-size: 1.2em";
     document.querySelector(".completed-btn").style = "font-size: 1em";
+    //Refresh to show sort
     refreshTodoList();
 })
 
 document.querySelector(".completed-btn").addEventListener("click", () => {
-    console.log("completed")
+    //Update Sort Number
     sort = 2;
+    //Update button style
     document.querySelector(".all-btn").style = "font-size: 1em";
     document.querySelector(".active-btn").style = "font-size: 1em";
     document.querySelector(".completed-btn").style = "font-size: 1.2em";
+    //Refresh to show sort
     refreshTodoList();
 })
 
