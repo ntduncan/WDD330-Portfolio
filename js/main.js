@@ -16,6 +16,10 @@ const assignments = [
         label: 'Todo App',
         url: 'Week6/index.html'
     },
+    {
+        label: 'Week7 Notes',
+        url: 'Week7/index.html'
+    },
 ]
 
 assignments.forEach(assignment => {
