@@ -14,7 +14,7 @@ const assignments = [
     },
     {
         label: 'Todo App',
-        url: 'Week6/index.html'
+        url: 'week6/index.html'
     },
     {
         label: 'Week7 Notes',
