@@ -7,6 +7,7 @@ const todoWindown = document.querySelector(".card-body");
 const totalLeft = document.querySelector("span");
 
 console.log(Ls.getTodoList())
+Ls.setTodoList([]);
 
 let sort = 0;
 
