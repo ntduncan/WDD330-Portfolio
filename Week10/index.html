@@ -13,19 +13,81 @@
 <main>
         <section class="primary">
            <h1>Validating Forms</h1>
-           <p>
-               <h3>The most basic ways to make sure that data is validated on the client side are:</h3>
+           
+               <h3>Built-In Form Validation</h3>
+               The most basic ways to make sure that data is validated on the client side are: 
                <ol>
                    <li>Be sure that required fields have "required" included in the input tag</li>
                    <li>Make sure that you use the correct types for input fields</li>
                </ol>
-               These two methods are part of "Build-in Form validation"
+               These two methods are part of "Built-in" form validation. This makes them easy to do, but it limits you to what is built in, giving you less customizability.<br /><br />
+               <img src="img1.png" alt="required-input-example" width=300><br />
+               There are other built in validation tools that you can use in the input tags depending on the input type. Here are a couple options:
+               <ul>
+                       <li>Use "minlength" and "maxlength" to enforce string size when working with any kind of text data</li>
+                       <li>"min" and "max" allow you to enforce numerical ranges for numerical data</li>
+                       <li>"pattern" allows you to enforce textual or numerical patterens using regular expression</li>
+               </ul>
+               <br />
+               Though Built-in validation is limited functionally, it is easy to do custom validation styles in css because required, valid, and invalid can be used as selectors.
+               <img src="img2.png" alt="css-validation-styling" width=300><img src="img3.png" alt="css-validation-styling-example" width=300>
             </p>
+            <p>
+                <h3>JavaScript Validation</h3>
+                As stated before, the biggest holdback from using built-in form validation is that you are limited on customizability. If you want custom form validation you need to
+                switch the approach from HTML and use JavaScript. JavaScript allows you to make custom form validation on submit and helps inforce more specific validation rules, and
+                allows you to create custom error messages. The major hold back with JavaScript validation is that you have to do everything from scratch because none of the custom Validation
+                is built in (which is why it is considered custom).
+                <img src="img4.png" alt="bleh">
 
-            <img src="img1.png" alt="required-input-example" width=300>
+            </p>
         </section>
        <section class="secondary">
-           
+           <h1>Using Fetch</h1>
+           <p>
+                Fetch is a method that can be used in JavaScript to make http requests. Because fetch requests typically take place asynchronously, the fetch method returns a Promise.
+                The implication of a response of a Promise is that you can use then() and catch() to make sure that the response is received synchronously and error are accounted for.
+                for a basic get request requiring no authentication tokens, you can typically just use fetch(url) to get the data. For other requests you need to provide a second parameter
+                of a javaScript object specifying parameters, headers, methods, and other request data (eg fetch(url, {method: "POST"})).
+                <br><br>
+                Here is a basic implementation of a GET fetch request with no authentication using a simple joke API:
+                <div class="joke">
+                        <p class="joke-text"></p>
+                        <button class="btn">Press Me</button>
+                </div>
+                <script>
+                        let jokeText = document.querySelector(".joke-text");
+                        let jokeBtn = document.querySelector(".btn");
+
+                        jokeBtn.onclick = fetch("https://api.jokes.one")
+                        .then(response => response.json())
+                        .then(contents => jokeText.innerHTML = contents);
+                </script>
+                <style>
+                        .joke-text {
+                           padding: 1em; 
+                           border: 1px solid white; 
+                           width: fit-content; 
+                           min-height: 1em; 
+                           min-width: 200px;
+                        }
+                        .btn {
+                                height: 30px;
+                                border: none;
+                        }
+                        .btn:active {
+                                background: black;
+                                border: 1px solid white;
+                                color: white
+                        }
+                        .joke {
+                                width:fit-content;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                        }
+                </style>
+           </p>
        </section>
 </main>
 <br /><br />
