@@ -51,17 +51,28 @@
                 of a javaScript object specifying parameters, headers, methods, and other request data (eg fetch(url, {method: "POST"})).
                 <br><br>
                 Here is a basic implementation of a GET fetch request with no authentication using a simple joke API:
+                (desclaimer: This is a public API and the json formatting is not consitent between calls which results in regular "undefined" values)
                 <div class="joke">
                         <p class="joke-text"></p>
                         <button class="btn">Press Me</button>
                 </div>
                 <script>
-                        let jokeText = document.querySelector(".joke-text");
                         let jokeBtn = document.querySelector(".btn");
+                        jokeBtn.addEventListener("click", () => {
+                                let jokeText = document.querySelector(".joke-text");
 
-                        jokeBtn.onclick = fetch("https://api.jokes.one")
-                        .then(response => response.json())
-                        .then(contents => jokeText.innerHTML = contents);
+                                fetch("https://v2.jokeapi.dev/joke/Programming?format=json")
+                                .then(response => response.json())
+                                .then(contents => {
+                                        if(contents.setup !== undefined){
+                                                jokeText.innerHTML = `Joke: ${contents.setup}<br>Answer: ${contents.delivery}`;
+                                        } else {
+                                                jokeText.innerHTML = `Joke: ${contents.joke}<br>Answer: ${contents.delivery}`;
+                                        }
+                                });
+                        })
+                        
+
                 </script>
                 <style>
                         .joke-text {
@@ -70,6 +81,7 @@
                            width: fit-content; 
                            min-height: 1em; 
                            min-width: 200px;
+                           color: white;
                         }
                         .btn {
                                 height: 30px;
