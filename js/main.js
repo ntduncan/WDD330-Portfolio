@@ -28,6 +28,10 @@ const assignments = [
     label: "Week9 Notes",
     url: "Week9/index.html",
   },
+  {
+    label: "Week10 Notes",
+    url: "Week10/index.html",
+  },
 ];
 
 assignments.forEach((assignment) => {
