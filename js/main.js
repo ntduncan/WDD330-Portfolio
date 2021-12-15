@@ -32,6 +32,10 @@ const assignments = [
     label: "Week10 Notes",
     url: "Week10/index.html",
   },
+  {
+    label: "Stock Watch (Final)",
+    url: "https://ntduncan.github.io/stockTrackerFrontend/",
+  },
 ];
 
 assignments.forEach((assignment) => {
